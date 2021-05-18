@@ -1,21 +1,16 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Learnavi",
+  "name": "Learnavi- Learning Journey",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "LearnaviLogo.svg",
+      "sizes": "45x41",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "LearnaviLogo.svg",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "45x41"
     }
   ],
   "start_url": ".",
