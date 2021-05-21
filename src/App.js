@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import { Canvas} from '@react-three/fiber'
 import BackgroundMusic from './BackgroundMusic'
 import SliverSphere from './SilverSphere'
@@ -13,25 +13,32 @@ import LableSphere from './LableSphere'
 const purple = "#722F5F"
 const cyan = "#72D8C8"
 
+const courses ={
+    name:"",
+    trendScore:0.1,
+    
+}
+function createSpheres(){
+
+}
+
 export default function App() {
 
     return (<>
-        <Canvas style={{ backgroundColor: "black", cursor:"move" }}>
+        <Canvas id="mainCanvas" style={{ backgroundColor: "black", cursor:"move" }}>
             <directionalLight args={[0xffffff, 1.0]}position={[20, 100, 10]}/>
             <ambientLight intensity={0.5} />
             <CameraControls />
-            <SliverSphere position={[-3, 0, 0]} size={0.4} label="Virtual Reality"/>
-            <SliverSphere position={[3, 0, 0]} size={0.5} label="Web Development"/>
-            <SliverSphere position={[-1, -3, 0]} size={0.2} label="Java"/>
-            <SliverSphere position={[1, 3, 0]} size={0.6} label="Socket"/>
-            <SliverSphere position={[-3, 0, -3]} size={1} label="Networking"/>
-            <SliverSphere position={[-2, 1, 2]} size={0.5} label="AR"/>
-            <SliverSphere position={[1, -3, -3]} size={1.1} label="Machine Learning"/>
-            <SliverSphere position={[0, 3, -5]} size={0.3} label="React Native"/>
-            <SliverSphere position={[4, -1, 3]} size={0.2} label="DevOps"/>
+            <LableSphere position={[-3, 0, 0]} size={0.4} label="Virtual Reality"/>
+            <LableSphere position={[3, 0, 0]} size={0.5} label="Omer"/>
+            <LableSphere position={[-1, -3, 0]} size={0.2} label="Java"/>
+            <LableSphere position={[1, 3, 0]} size={0.6} label="Socket"/>
+            <LableSphere position={[-3, 0, -3]} size={1} label="Networking"/>
+            <LableSphere position={[-2, 1, 2]} size={0.5} label="AR"/>
+            <LableSphere position={[1, -3, -3]} size={1.1} label="Machine Learning"/>
+            <LableSphere position={[0, 3, -5]} size={0.3} label="React Native"/>            
             <Skybox />
         </Canvas>
-        <div id="labels"></div>
         <div>
             <a href="https://learnavi.com/" style={{opacity:0.6 ,textDecoration: "none", position: "fixed", top: "1vw", left: "3vw", border: 20, zIndex: 1, display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
                 <img src="LearnaviLogo.svg" alt="Learnavi Logo" style={{ width: 42, height: 42, display: "inline", margin: "auto" }} />
