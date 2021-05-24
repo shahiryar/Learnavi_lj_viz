@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useEffect} from 'react'
 import { Canvas} from '@react-three/fiber'
 import CameraControls from './CameraControls'
 import Skybox from './Skybox'
@@ -44,8 +44,8 @@ const topics =[{
 ]
 
 export default function App() {
-
     return (
+        <>
         <Canvas id="mainCanvas" style={{ backgroundColor: "black", cursor:"move" }}>
             <directionalLight args={[0xffffff, 1.0]}position={[20, 100, 10]}/>
             <ambientLight intensity={0.5} />
@@ -53,6 +53,8 @@ export default function App() {
             {createSpheres(topics)}
             <Skybox />
         </Canvas>
+        <div id="labels"></div>
+        </>
     )
 }
 
