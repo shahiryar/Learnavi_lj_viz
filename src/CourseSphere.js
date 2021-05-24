@@ -9,7 +9,7 @@ import {
 import Label from './Label';
 import { useHistory } from 'react-router-dom';
 
-function SilverSphere(props) {
+function CourseSphere(props) {
     const { scene, gl } = useThree();
     const { position, size, label } = props
     const cubeRenderTarget = new WebGLCubeRenderTarget(256, {
@@ -24,11 +24,9 @@ function SilverSphere(props) {
     const [hovered, setHover] = useState(false)
     const [active, setActive] = useState(false)
 
-    useFrame(() => {
-        //mesh.current.rotation.z +=(0.2*size)
-        cubeCamera.update(gl, scene)});
+    useFrame(() => cubeCamera.update(gl, scene));
     const history = useHistory()
-    const clickCallback = ()=> history.push('courses')
+    const onClick = ()=> history.push('courses')
 
     return (
         <>
@@ -38,14 +36,14 @@ function SilverSphere(props) {
                 scale={hovered? 0.9: 1}
                 onClick={(event) => {
                     setActive(!active);
-                    window.location.assign('/courses')
+                    window.location.assign('/')
                 }}
                 onPointerOver={(event) => {setHover(true);
                     }}
                 onPointerOut={(event) => {setHover(false);
                     document.body.style.cursor = "default"}}
                 >
-                <sphereGeometry attach="geometry" args={[size, 20, 15]} />
+                <sphereGeometry attach="geometry" args={[size, 32, 32]} />
                 <meshBasicMaterial
                     attach="material"
                     envMap={cubeCamera.renderTarget.texture}
@@ -57,9 +55,9 @@ function SilverSphere(props) {
     );
 }
 
-export default SilverSphere
+export default CourseSphere
 // setting default value to name prop
-SilverSphere.defaultProps = {
+CourseSphere.defaultProps = {
     size: 1,
     label: "Label",
     position:[0,0,0],

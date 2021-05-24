@@ -1,0 +1,61 @@
+.btnM, .btnP, .btnRan {
+    background-color: #ffffff1f;
+    padding: 10px;
+    border-radius: 30%;
+    transition-duration: 250ms;
+    text-align: center;
+    position: fixed;
+    bottom: 5vw;
+    right: 3.5vw;
+    z-index: 1;
+    padding-inline-start: 20;
+    margin: auto;
+    transition-duration: 250ms;
+  }
+  
+  .btnM:hover {
+    background-color: #ee38ff54;
+    -webkit-box-shadow: 10px 10px 99px 6px #f038ff;
+    -moz-box-shadow: 10px 10px 99px 6px rgba(240, 56, 255, 1);
+    box-shadow: 10px 10px 99px 6px rgba(240, 56, 255, 1);
+    transition-duration: 250ms;
+    bottom:4.8vw;
+  }
+  .btnP:hover {
+    background-color: #4538ff54;
+    -webkit-box-shadow: 10px 10px 99px 6px #4538ff;
+    -moz-box-shadow: 10px 10px 99px 6px #4538ff;
+    box-shadow: 10px 10px 99px 6px #4538ff;
+    transition-duration: 250ms;
+    bottom:4.8vw;
+  }
+  .btnRan{
+    right: 7vw;
+  }
+  .btnRan:hover {
+    background-color: #4538ff54;
+    -webkit-box-shadow: 10px 10px 99px 6px #4538ff;
+    -moz-box-shadow: 10px 10px 99px 6px #4538ff;
+    box-shadow: 10px 10px 99px 6px #4538ff;
+    transition-duration: 250ms;
+    bottom:4.8vw;
+  }
+  .pulse {
+    animation: pulse-animation 2s infinite ease-out;
+  }
+  .pulse:hover {
+    animation: pulse-animation 2s ease-out;
+  }
+  
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px #ffffff1f;
+    }
+    70% {
+        box-shadow: 0 0 0 0px #4538ff54;
+      }
+    100% {
+      box-shadow: 0 0 0 20px #4538ff00;
+    }
+  }
+  

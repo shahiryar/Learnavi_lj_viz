@@ -9,3 +9,23 @@ body,
   margin: 0;
   padding: 0;
 }
+#labels {
+  position: absolute;  /* let us position ourself inside the container */
+  left: 0;             /* make our position the top left of the container */
+  top: 0;
+  color: white;
+  z-index: 1;
+}
+
+#labels>div{
+  position: absolute;  /* let us position them inside the container */
+  left: 0;             /* make their default position the top left of the container */
+  top: 0;
+  cursor: pointer;     /* change the cursor to a hand when over us */
+  font-size: 1.25em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  user-select: none;   /* don't let the text get selected */
+}
+#labels>div:hover {
+  color: red;
+}

@@ -1,7 +1,8 @@
 import React, { Component, useState } from "react"
-import { FaVolumeUp, FaVolumeMute } from "react-icons/fa"
+import { FaVolumeUp, FaVolumeMute, FaRandom } from "react-icons/fa"
+import './BackgroundMusic.css'
 
-function PlayAudio() {
+function playAudio() {
     const audioEl = document.getElementsByClassName("audio-element")[0]
     audioEl.play()
 }
@@ -11,29 +12,43 @@ function pauseAudio() {
     audioEl.pause()
 }
 
+const randomTrack = () => {
+    const list =  ["Two_moons.mp3",
+    "Brass Orchid - Bobby Richards.mp3",
+    "Glacier - Patrick Patrikios.mp3",
+    "Large Smile Mood - Nico Staf.mp3",
+    "Lights - Patrick Patrikios.mp3",
+    "Yah Yah - josh pan.mp3"
+]
+    return list[Math.floor(Math.random() * list.length)];
+};
+
 function BackgroundMusic() {
+
     const [playing, setPlaying] = useState(false)
-    return (
-        <div>
-            <button onClick={(event) => {
-                if (playing) {
-                    pauseAudio();
-                    setPlaying(false);
-                }else{
-                    PlayAudio();
-                    setPlaying(true);
-                }
-            }} style={{
-                display: "inline", backgroundImage: "none", cursor: "pointer", textAlign: "center", textDecoration: "none", borderStyle: "none",
-                backgroundColor: "rgba(255,255,255, 0.1)", borderRadius: "1rem", boxShadow: "0 1.5rem 2.5rem 0 rgba(4,12,33,0)", padding: 10
-            }}>
-                <div id="volumeButton"><FaVolumeUp size={25} color={"white"} id="playing"/></div>
-                
-            </button>
-            <audio className="audio-element">
-                <source src="Two_moons.mp3"></source>
-            </audio>
-        </div>
+    const [track, setTrack] = useState("Two_moons.mp3")
+    return (<>  <div id="neon-btn"
+        onClick={(event) => {
+            if (playing) {
+                pauseAudio();
+                setPlaying(false);
+            } else {
+                playAudio();
+                setPlaying(true);
+            }
+        }}
+        style={{
+            cursor: "pointer"
+        }}
+    >{playing ?
+        <FaVolumeMute className={"btnM"} size={50} color={"white"} /> :
+        <FaVolumeUp className={"btnP pulse"} size={"3.2rem"} color={"white"} />}
+    </div>
+        <audio onPause={(event) => { setPlaying(false) }} className="audio-element">
+            <source src={track}></source>
+        </audio>
+        
+    </>
     )
 }
 

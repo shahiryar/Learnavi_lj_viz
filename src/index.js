@@ -1,14 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';  
+import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Courses from './Courses';
+import Contents from './Contents'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import BackgroundMusic from './BackgroundMusic'
+import UpperLayer from './UpperLayer'
+import ParticleFiber from './ParticleFiber'
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <div id="labels"></div>
-    <App />
-  </React.StrictMode>,
+  <>
+    <UpperLayer />
+    <div id="labels"/>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={App} />
+        <Route path="/courses" component={Courses } />
+        <Route path="/content" component={ParticleFiber} />
+      </Switch>
+    </Router>
+
+  </>
+  ,
   document.getElementById('root')
 );
 

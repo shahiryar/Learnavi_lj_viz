@@ -1,0 +1,54 @@
+.btnInfo {
+    background-color: #ffffff1f;
+    padding: 10px;
+    border-radius: 30%;
+    transition-duration: 250ms;
+    text-align: center;
+    position: fixed;
+    bottom: 5vw;
+    right: 7vw;
+    z-index: 1;
+    padding-inline-start: 20;
+    margin: auto;
+    transition-duration: 250ms;
+  }
+  
+  .btnInfo:hover {
+    background-color: #4538ff54;
+    -webkit-box-shadow: 10px 10px 99px 6px #4538ff;
+    -moz-box-shadow: 10px 10px 99px 6px #4538ff;
+    box-shadow: 10px 10px 99px 6px #4538ff;
+    transition-duration: 250ms;
+    bottom:4.8vw;
+  }
+  .selected {
+    background-color: #4538ff54;
+    bottom:4.8vw;
+  }
+  .selected:hover {
+    background-color: #ffffff1f;
+    bottom:4.8vw;
+  }
+  .infoBox{
+    width: fit-content;
+    max-width: 10vw;
+    height: fit-content;
+    padding: 1em;
+    background: #00000033;
+    border-radius: 15%;
+    position: fixed;
+    bottom: 8vw;
+    right: 3.5vw;
+    color: white;
+    text-align: left;
+    transition: 0.5s;
+
+  }
+  .infoBox:hover{
+    background: #00000033;
+    border-radius: 5%;
+    transition: 0.5s;
+
+  }
+  
+  

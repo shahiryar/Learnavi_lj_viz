@@ -28,14 +28,14 @@ function Label(props) {
     const [opts, setOpts] = useState({
         font: "Philosopher",
         fontSize: 0.2,
-        color: "#99ccff",
+        color: "#ffffff",
         maxWidth: 300,
         lineHeight: 1,
         letterSpacing: 0,
         textAlign: "justify",
         materialType: "MeshPhongMaterial"
     });
-
+    //color: "#99ccff"
     return (
         <text
             {...props}

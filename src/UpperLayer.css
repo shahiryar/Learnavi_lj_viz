@@ -1,0 +1,35 @@
+#LogoLink{
+    opacity: 0.6;
+    text-decoration: none;
+    position: fixed;
+    top: 1vw;
+    left: 3vw;
+    border: 20;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition-duration: 250ms;
+}
+#LogoLink:hover{
+    opacity: 1;
+    top: 1.25vw;
+    transition-duration: 250ms;
+}
+
+.footerLink{
+    text-decoration: none;
+    color: white;
+}
+
+.footerLink:hover{
+    text-decoration: underline;
+}
+
+.footerLinksDiv{
+    display: inline;
+    color: white;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
