@@ -10,7 +10,7 @@ function Points() {
   const bufferRef = useRef();
 
   let t = 0;
-  let f = 0.002*10;
+  let f = 0.002;
   let a = 3*10;
   const graph = useCallback((x, z) => {
     return Math.sin(f * (x ** 2 + z ** 2 + t)) * a;
@@ -34,7 +34,9 @@ function Points() {
   }, [count, sep, graph])
 
   useFrame(() => {
-    t += 1
+    t += 2
+    a+=0.1
+
     console.log(`amp ${a} freq ${f}`)
 
     const positions = bufferRef.current.array;
